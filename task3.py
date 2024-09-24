@@ -21,7 +21,7 @@ while True:
     ret, frame = cap1.read()
     if not ret:
         break
-    frame = cv2.resize(frame, (640, 480))
+    frame = cv2.resize(frame, (480, 640))
     cv2.imshow('resize', frame)
     if cv2.waitKey(1) & 0xFF == 27:  # Escape key
         break
@@ -30,6 +30,7 @@ while True:
     ret, frame = cap2.read()
     if not ret:
         break
+    frame = cv2.resize(frame, (480, 640))
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
     cv2.imshow('color', frame)
     if cv2.waitKey(1) & 0xFF == 27:  # Escape key
